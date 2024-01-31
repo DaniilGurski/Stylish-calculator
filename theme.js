@@ -1,6 +1,6 @@
 const body = document.querySelector("body");
 const themeToggle = document.querySelector(".theme-toggle");
-const currentMode = JSON.parse(localStorage.getItem("page-theme")).toString() || "1";
+const currentMode = JSON.parse(localStorage.getItem("page-theme")) || "1";
 const themeMap = {
     "1": "",
     "2": "light-theme",
@@ -19,5 +19,5 @@ themeToggle.addEventListener("input", (event) => {
 })
 
 // On load
-setPageTheme(themeMap[currentMode]);
+setPageTheme(themeMap[currentMode.toString()]);
 themeToggle.value = currentMode;
