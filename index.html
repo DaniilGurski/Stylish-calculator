@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="calc.js" defer></script>
+    <script src="theme.js" defer></script>
+    
+    <title>Calculator</title>
+</head>
+<body class="">
+    <div class="container">
+
+        <div class="calculator">
+            <header class="header"> 
+                <span class="header__app-title">Calc</span>
+
+                <div class="theme-toggle-container">
+                    <span>Theme</span>
+
+                    <div class="mode-indicator">
+                        <span aria-label="theme mode 1">1</span>
+                        <span aria-label="theme mode 2">2</span>
+                        <span aria-label="theme mode 3">3</span>
+                    </div>
+
+                    <input type="range" min="1" max="3" value="1" class="theme-toggle" aria-label="change between 3 page themes">
+                </div>
+            </header>
+
+            <main class="main"> 
+                <div class="calc-screen" aria-live="polite"> 
+                    0
+                </div>
+
+                <div class="calc-keypad"> 
+                    <button class="calc-key">7</button>
+                    <button class="calc-key">8</button>
+                    <button class="calc-key">9</button>
+                    <button class="calc-key calc-key--secondary-accent" data-control-button="Del">del</button>
+
+                    <button class="calc-key">4</button>
+                    <button class="calc-key">5</button>
+                    <button class="calc-key">6</button>
+                    <button class="calc-key" aria-label="add" data-js-operator="+">+</button>
+
+                    <button class="calc-key">1</button>
+                    <button class="calc-key">2</button>
+                    <button class="calc-key">3</button>
+                    <button class="calc-key" aria-label="subtract" data-js-operator="-">-</button>
+
+                    <button class="calc-key">.</button>
+                    <button class="calc-key">0</button>
+                    <button class="calc-key" aria-label="devide" data-js-operator="/">/</button>
+                    <button class="calc-key" aria-label="multiply" data-js-operator="*">x</button>
+
+                    <button class="calc-key calc-key--secondary-accent calc-key--double-width" data-control-button="Reset"> Reset </button>
+                    <button class="calc-key calc-key--primary-accent calc-key--double-width" id="calc-result-button" data-control-button="Result">=</button>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

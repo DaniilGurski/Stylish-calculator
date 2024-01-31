@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+
+
+:root { 
+    /* Text */
+    --clr-text-700: hsl(198, 20%, 13%);
+    --clr-text-600: hsl(60, 10%, 19%);
+    --clr-text-500: hsl(221, 14%, 31%);
+    --clr-text-400: hsl(221, 14%, 31%);
+    --clr-text-300: hsl(52, 100%, 62%);
+    --clr-text-100: hsl(0, 0%, 100%);
+
+    --clr-body: var(--clr-text-500);
+    --clr-header: var(--clr-text-100);
+    --clr-screen: var(--clr-text-100);
+    --clr-accent-1: var(--clr-text-100);
+    --clr-accent-2: var(--clr-text-100);
+
+    /* Backgrounds */
+    --bg-main: hsl(222, 26%, 31%);
+    --bg-keypad: hsl(223, 31%, 20%);
+    --bg-toggle: var(--bg-keypad);
+    --bg-screen: hsl(224, 36%, 15%);
+    --bg-accent-1: hsl(6, 63%, 50%);
+    --bg-accent-2: hsl(225, 21%, 49%);
+    --bg-key: hsl(30, 25%, 89%);
+
+    /* Hover */
+    --bg-key-hover: hsl(30, 25%, 96%);
+    --bg-accent-1-hover: hsl(6, 63%, 60%);
+    --bg-accent-2-hover: hsl(225, 21%, 60%);
+
+    /* Shadows */ 
+    --sh-accent-1: hsl(6, 70%, 34%);
+    --sh-accent-2: hsl(224, 28%, 35%);
+    --sh-key: hsl(35, 11%, 61%);
+    
+    /* Font settings */ 
+    --ff-primary: 'League Spartan', sans-serif;
+    --fw-page: 700;
+
+    --fs-500: 2.4rem;
+    --fs-400: 1.8rem;
+    --fs-300: 1.7rem;
+    --fs-200: 1.125rem;
+    --fs-100: 1rem;
+    --fs-50: 0.75rem;
+}
+
+
+/*
+1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+
+/*
+2. Remove default margin
+*/
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+} 
+
+
+/*
+Typographic tweaks!
+3. Add accessible line-height
+4. Improve text rendering
+*/
+body {
+    line-height: calc(1em + 0.5rem);
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/*
+5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+}
+
+
+/*
+6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+    font: inherit;
+}
+
+
+/*
+7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+
+/* 
+8. Link reset 
+*/
+a {
+    text-decoration: none; 
+    color: currentColor;
+}
+
+
+/* 
+9. Full height 
+*/
+html,
+body {
+    height: 100%;
+}
+
+
+/* General styling */
+body {
+    background-color: var(--bg-main);
+
+    font-family: var(--ff-primary);
+    color: var(--clr-body);
+}
+
+
+.light-theme {
+    --bg-main: hsl(0, 0%, 90%);
+    --bg-screen: hsl(0, 0%, 93%);
+    --bg-keypad: hsl(0, 5%, 81%);
+    --bg-toggle: var(--bg-keypad);
+    --bg-accent-1: hsl(25, 98%, 40%);
+    --bg-accent-2: hsl(185, 42%, 37%);
+    --bg-key: hsl(45, 7%, 89%);
+    
+    /* Hover */ 
+    --bg-key-hover: hsl(45, 7%, 96%);
+    --bg-accent-1-hover: hsl(25, 98%, 60%);
+    --bg-accent-2-hover: hsl(185, 42%, 56%);
+
+    --clr-body: var(--clr-text-600);
+    --clr-screen: currentColor; 
+    --clr-header: currentColor; 
+
+    --sh-accent-1: hsl(25, 99%, 27%);
+    --sh-accent-2: hsl(185, 58%, 25%);
+    --sh-key: hsl(35, 11%, 61%);
+}
+
+
+.strange-theme {
+    --bg-main: hsl(268, 75%, 9%);
+    --bg-toggle: hsl(268, 71%, 12%);
+    --bg-screen: var(--bg-toggle);
+    --bg-keypad: var(--bg-toggle);
+
+    --bg-key: hsl(268, 47%, 21%);
+    --bg-accent-1: hsl(176, 100%, 44%);
+    --bg-accent-2: hsl(281, 89%, 26%);
+
+    /* Hover */
+    --bg-key-hover: hsl(268, 47%, 44%);
+    --bg-accent-1-hover: hsl(176, 100%, 60%);
+    --bg-accent-2-hover:hsl(281, 89%, 46%);
+
+    --clr-body: var(--clr-text-300);
+    --clr-header: currentColor;
+    --clr-screen: currentColor;
+    --clr-accent-1: var(--clr-text-700);
+
+    --sh-accent-1: hsl(177, 92%, 70%);
+    --sh-accent-2: hsl(285, 91%, 52%);
+    --sh-key: hsl(290, 70%, 36%);
+}
+
+
+.container {
+    display: grid;
+    place-items: center;
+
+    height: 100%;
+}
+
+
+.calculator {
+    --_block-border-radius: 0.6rem;
+    --_block-gap: 1rem;
+    --_block-padding: 1.5rem;
+    
+    display: grid;
+    gap: var(--_block-gap);
+    width: min(450px, 90%);
+}
+
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: var(--clr-header);
+}
+
+
+.header__app-title {
+    font-size: var(--fs-300);
+}
+
+
+.theme-toggle-container {
+    display: grid;
+    grid-template-columns: 1fr 5.5rem;
+    grid-template-areas:
+    "... modes"
+    "label toggle";
+
+    column-gap: 1.5rem;
+}
+
+
+.theme-toggle-container span {
+    grid-area: label;
+}
+
+
+.mode-indicator {
+    display: flex;
+    justify-content: space-around;
+    grid-area: modes;
+
+    font-size: var(--fs-50);
+}
+
+
+.theme-toggle {
+    appearance: none; /* Platform native */ 
+    /* Fallback */ 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    grid-area: toggle;
+
+    background-color: var(--bg-toggle);
+    border-radius: 30rem;
+
+    padding-block: 0.5rem;
+    padding-inline: 0.5rem;
+
+    cursor: pointer;
+}
+
+
+.theme-toggle::-webkit-slider-thumb {
+    -webkit-appearance: none;
+
+    width: 1rem;
+    aspect-ratio: 1;
+
+    background-color: var(--bg-accent-1);
+    border-radius: 50%;
+}
+
+
+.theme-toggle::-webkit-slider-thumb:hover{
+    background-color: var(--bg-accent-1-hover);
+}
+
+
+.theme-toggle::-moz-range-thumb {
+    -moz-appearance: none;
+
+    width: 1rem;
+    aspect-ratio: 1;
+
+    background-color: var(--bg-accent-1);
+    border-radius: 50%;
+}
+
+
+.theme-toggle::-moz-range-thumb {
+    background-color: var(--bg-accent-1-hover);
+}
+
+
+.theme-toggle::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+}
+
+
+.theme-toggle::-moz-range-track {
+    -moz-appearance: none;
+}
+
+
+.main {
+    display: grid;
+    gap: var(--_block-gap);
+}
+
+
+.calc-screen {
+    text-align: end;
+    
+    background: var(--bg-screen);
+    color: var(--clr-screen);
+    font-size: var(--fs-500);
+    
+    padding: var(--_block-padding);
+
+    border-radius: var(--_block-border-radius);
+
+    overflow-x: auto;
+}
+
+
+.calc-keypad {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(3.5rem, 1fr));
+    gap: clamp(1rem, 2vw, 1.3rem);
+
+    background-color: var(--bg-keypad);
+    padding: var(--_block-padding);
+    border-radius: var(--_block-border-radius);
+
+    font-size: var(--fs-400);
+}
+
+
+.calc-key {
+    --_bg-color: var(--bg-color, var(--bg-key));
+    --_text-color: var(--text-color, currentColor);
+    --_shadow-color: var(--shadow-color, var(--sh-key));
+
+    padding-block: 0.7rem;
+
+    background: var(--_bg-color);
+    box-shadow: 0px 3px var(--_shadow-color);
+    color: var(--_text-color);
+
+    border: none;
+    border-radius: var(--_block-border-radius);
+
+    cursor: pointer;
+}
+
+
+.calc-key--primary-accent {
+    --bg-color: var(--bg-accent-1);
+    --text-color: var(--clr-accent-1);
+    --shadow-color: var(--sh-accent-1);
+}
+
+
+.calc-key--secondary-accent {
+    --bg-color: var(--bg-accent-2);
+    --text-color: var(--clr-accent-2);
+    --shadow-color: var(--sh-accent-2)
+}
+
+
+.calc-key--double-width {
+    grid-column: span 2;
+}
+
+
+.calc-key:hover {
+    --bg-color: var(--bg-key-hover);
+}
+
+
+.calc-key--primary-accent:hover {
+    --bg-color: var(--bg-accent-1-hover);
+}
+
+
+.calc-key--secondary-accent:hover {
+    --bg-color: var(--bg-accent-2-hover);
+}
